@@ -306,18 +306,36 @@ print(dnna("AATG"))
 
 #%%
 
+def calc(number):
+    if number % 2 != 0:
+        return number * 9
+    else:
+        return number * 8
+    
+    
+print(calc(2))
+print(calc(1))
+print(calc(8))
+print(calc(4))
+print(calc(5))
+
+#%%
+
+calc3 = lambda number: number * 9 if number % 2 != 0 else number*8 
+
+print(calc3(2))
+print(calc3(1))
+print(calc3(8))
+print(calc3(4))
+print(calc3(5))
+
+#%%
+
+def simple_multiplication(numara) :
+    return numara * (8 + numara%2)
 
 
-
-
-
-
-
-
-
-
-
-
+#%%
 
 
 
