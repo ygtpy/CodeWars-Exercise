@@ -279,7 +279,7 @@ print(isogram3("aba"))
 print(isogram3("moOse"))
 print(isogram3(""))
 
-#%%
+#%% DNA
 
 def dne(dna):
     karsilik= {"A":"T", "T":"A", "G":"C", "C":"G"}
@@ -287,7 +287,8 @@ def dne(dna):
     return birlestir
 
 print(dne("AATG"))
-#%%
+#%% DNA
+
 karsilik= {"A":"T", "T":"A", "G":"C", "C":"G"}
 def dnaa(dna):
     return ''.join([karsilik[x] for x in dna])
@@ -295,7 +296,7 @@ def dnaa(dna):
 
 print(dnaa("AATG"))
 
-#%%
+#%% DNA
 
 import string
 
@@ -304,7 +305,7 @@ def dnna(dna):
 
 print(dnna("AATG"))
 
-#%%
+#%% tek cift
 
 def calc(number):
     if number % 2 != 0:
@@ -319,7 +320,7 @@ print(calc(8))
 print(calc(4))
 print(calc(5))
 
-#%%
+#%% tek cift
 
 calc3 = lambda number: number * 9 if number % 2 != 0 else number*8 
 
@@ -335,49 +336,78 @@ def simple_multiplication(numara) :
     return numara * (8 + numara%2)
 
 
+#%% play bonjo
+
+def kontrol(name):
+    liste= {}
+    for i in range(1):
+        if name[i] == "r" or name[i] == "R":
+            return f"{name} plays banjo"
+        else:
+            return f"{name} does not play banjo "
+
+print(kontrol("martin"))
+print(kontrol("bravo"))
+print(kontrol("rolf"))
+print(kontrol("Rikke"))
+
+
+#%% play bonjo 
+
+def kontrol(name):
+    if name[0] == "r" or name[0] == "R":
+        return f"{name} plays banjo"
+    else:
+        return f"{name} does not play banjo"
+    
+print(kontrol("martin"))
+print(kontrol("bravo"))
+print(kontrol("rolf"))
+print(kontrol("Rikke")) 
+
+#%% play bonjo
+
+kontrol = lambda name: f"{name} plays banjo" if name[0].lower() == 'r' else f"{name} does not play banjo"
+
+print(kontrol("martin"))
+print(kontrol("bravo"))
+print(kontrol("rolf"))
+print(kontrol("Rikke")) 
+
+#%% cumledeki kelimelerin bas harflerini buyuk yazdir
+
+def up(string):
+    return " ".join(word.capitalize() for word in string.split())
+    # return string.title() 
+
+
+print(up("How can mirrors be real if our eyes aren't real"))
+
+
+#%% cumledeki kelimelerin bas harflerini buyuk yazdir
+
+def up(string):
+    words = string.split()
+    cap_words = [word[0].upper() + word[1:].lower() if word else "" for word in words]
+    
+    return " ".join(cap_words) 
+
+
+print(up("How can mirrors be real if our eyes aren't real"))
+
+
+#%% cumledeki kelimelerin bas harflerini buyuk yazdir
+
+
+def deneme(cumle):
+    kelimeler = cumle.split()
+    hallet = [kelime[0].upper() + kelime[1:].lower() if kelime else "" for kelime in  kelimeler]
+    return ' '.join(hallet)
+
+
+print(deneme("How can mirrors be real if our eyes aren't real"))
+
 #%%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
