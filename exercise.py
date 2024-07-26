@@ -407,14 +407,13 @@ def deneme(cumle):
 
 print(deneme("How can mirrors be real if our eyes aren't real"))
 
-#%%
-
+#%% string to int
 def deneme(number):
     return int(number)
 
 
 print(deneme("2345"))
-#%%
+#%% string to int
 
 
 def deneme1(number):
@@ -426,51 +425,77 @@ def deneme1(number):
 
 print(deneme("345"))
 
+#%%  her karakteri bir kez tekrar et
+
+def f(kelime):
+    cikti = "".join([karakter * 2 for karakter in kelime])
+    return cikti
+
+print(f("naber"))
 
 
+#%% her karakteri bir kez tekrar et
+
+def f(kelime):
+    sonuc = ""
+    
+    for harf in kelime:
+        sonuc += harf * 2
+    return sonuc
+
+print(f("naber"))
+
+#%% 
+
+def maxx(liste):
+    liste.sort()
+    return liste[-1]
+
+print(max([-52, 56, 30, 29, -54, 0, -110]))
+
+def minn(liste):
+    liste.sort()
+    return liste[0]
+
+print(min([-52, 56, 30, 29, -54, 0, -110]))
 
 
+#%%
+def maxxx(liste):
+    return max(liste)
 
+def minnn(liste):
+    return min(liste)
 
+print(maxxx([-52, 56, 30, 29, -54, 0, -110]))
+print(minnn([-52, 56, 30, 29, -54, 0, -110]))
 
+#%%
 
+def find_min(liste):
+    if len(liste) == 0:
+        return None
+    
+    min_v = liste[0]
+    
+    for numara in liste:
+        if numara < min_v:
+            min_v = numara
+    return min_v
 
+print(find_min([-52, 56, 30, 29, -54, 0, -110]))
 
+def find_max(liste):
+    if len(liste) == 0:
+        return None
+    
+    max_v= liste[0]
+    for numara in liste:
+        if numara > max_v:
+            max_v = numara
+    return max_v
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(find_min([-52, 56, 30, 29, -54, 0, -110]))
 
 
 
