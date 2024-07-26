@@ -409,16 +409,22 @@ print(deneme("How can mirrors be real if our eyes aren't real"))
 
 #%%
 
+def deneme(number):
+    return int(number)
 
 
+print(deneme("2345"))
+#%%
 
 
+def deneme1(number):
+    num_int=0
+    for char in number:
+        num_int = num_int * 10 + (ord(char) - ord("0"))
+    return num_int
 
 
-
-
-
-
+print(deneme("345"))
 
 
 
