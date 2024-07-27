@@ -429,7 +429,7 @@ print(deneme("345"))
 
 def f(kelime):
     cikti = "".join([karakter * 2 for karakter in kelime])
-    return cikti
+    return cikti 
 
 print(f("naber"))
 
@@ -497,55 +497,57 @@ def find_max(liste):
 
 print(find_min([-52, 56, 30, 29, -54, 0, -110]))
 
+#%% [new_element for element in iterable]
+
+def number(lines):
+    return [f"{i+1}: {line}" for i, line in enumerate(lines)]
+
+print(number(["a", "b", "c"])) 
+
+#%% enumerate(iterable, start=0)
+
+def indexle(metin):
+    return [f"{index}: {kelime}" for index, kelime in enumerate(metin,start=1)]
+
+print(indexle(["a", "b", "c"]))
 
 
 
+#%%
+
+def indexle(cumle):
+    sonuc = []
+    for index, kelime in enumerate(cumle,1):
+        sonuc.append(f"{index}: {kelime}")
+    return sonuc
+print(indexle(["a", "b", "c"]))
+
+#%%
+
+def hesapla(sayilar):
+    toplam = sum(int(x) for x in sayilar)
+    return toplam
+
+print(hesapla([9, 3, '7', '3'])) 
+
+#%%
+
+def hesapla2(num):
+    return sum(map(int, num))
+
+print(hesapla2([9, 3, '2', '3']))
 
 
+#%%
 
+def hesapla3(num):
+    sonuc = 0
+    for i in num:
+        sonuc += int(i)
+    return sonuc
+print(hesapla2([9, 3, '2', '23']))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#%%
 
 
 
