@@ -522,7 +522,7 @@ def indexle(cumle):
     return sonuc
 print(indexle(["a", "b", "c"]))
 
-#%%
+#%%  yazilan sayilari int cevirip topla
 
 def hesapla(sayilar):
     toplam = sum(int(x) for x in sayilar)
@@ -530,7 +530,7 @@ def hesapla(sayilar):
 
 print(hesapla([9, 3, '7', '3'])) 
 
-#%%
+#%% yazilan sayilari int cevirip topla
 
 def hesapla2(num):
     return sum(map(int, num))
@@ -538,7 +538,7 @@ def hesapla2(num):
 print(hesapla2([9, 3, '2', '3']))
 
 
-#%%
+#%% yazilan sayilari int cevirip topla
 
 def hesapla3(num):
     sonuc = 0
@@ -549,34 +549,45 @@ print(hesapla2([9, 3, '2', '23']))
 
 #%%
 
+def litres(time):
+    return (time * 0.5) //1
+print(litres(11.8))
+
+#%%
+
+def litres2(time):
+    return "haha loser" if time < 0 else int(time/2)
+
+print(litres2(11.8))
+print(litres2(-2))
 
 
 
 
+#%%
+
+def bool_to_word(boolean):
+    if boolean:
+        return "Yes"
+    else:
+        return "No"
+    
+print(bool_to_word(True))
+
+#%%
+
+bool_to_word2 = lambda boolean: "Yes" if boolean else "No"
+print(bool_to_word2(False))
+
+    
+
+#%%
+
+bool_to_word3 = {True:"Yes", False:"No"}.get
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(bool_to_word3(True))
+  
 
 
 
