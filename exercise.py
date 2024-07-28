@@ -587,26 +587,77 @@ bool_to_word3 = {True:"Yes", False:"No"}.get
 
 
 print(bool_to_word3(True))
+
+
+#%% toplama
+
+def summation(num):
+    n = 0
+    for i in range(num +1):
+        n += i
+    return n
+print(summation(4))
+
+#%%  toplama
+
+def summation2(num):
+    return sum(range(num+1))
+print(summation2(4))
+
+#%% Gauss'un toplama formülü
+
+def summation3(num):
+    return num*(num+1)//2
+print(summation3(4))
+
+#%% otobus durak yolcu 
+
+def number(bus_stops):
+    yolcu = 0
+    for durak in bus_stops:
+        yolcu += durak[0]
+        yolcu -= durak[1] 
+    return yolcu
+        
+        
+print(number([[10,0],[3,5],[5,8]])) # 5
+#%% otobus durak yolcu
+
+def number2(bus_stop):
+    return sum(binen - inen for binen, inen in bus_stop)
+
+print(number([[10,0],[3,5],[5,8]])) # 5
+
+#%%
+
+def hesap(operator,value1,value2):
+    if operator == "+":
+        return value1 + value2
+    elif operator == "-":
+        return value1 - value2
+    elif operator == "*":
+        return value1 * value2
+    else:
+        return value1 / value2
+
+print(hesap("+", 10, 5))
+print(hesap("-", 10, 5))
+print(hesap("*", 10, 5))
+print(hesap("/", 10, 5))  
+print(hesap("%", 10, 5))  
   
+    
+#%%
+
+hesap2 = lambda op, val1, val2: val1 + val2 if op == "+" else val1 - val2 \
+    if op == "-" else val1 * val2 if op == "*" else val1 / val2 if op == "/" else None
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(hesap2("+", 10, 5))
+print(hesap2("-", 10, 5))
+print(hesap2("*", 10, 5))
+print(hesap2("/", 10, 5))  
+print(hesap2("%", 10, 5)) 
 
 
 
