@@ -660,6 +660,69 @@ print(hesap2("/", 10, 5))
 print(hesap2("%", 10, 5)) 
 
 
+#%%
+def basic_op(o, a, b):
+    return {'+':a+b,'-':a-b,'*':a*b,'/':a/b}.get(o)
+
+print(basic_op("+", 10, 5))
+print(basic_op("-", 10, 5))
+print(basic_op("*", 10, 5))
+print(basic_op("/", 10, 5))  
+print(basic_op("%", 10, 5)) 
+#%%
+def basic_op(operator, value1, value2):
+    return eval(f'{value1}{operator}{value2}')
+print(basic_op("+", 10, 5))
+print(basic_op("-", 10, 5))
+print(basic_op("*", 10, 5))
+print(basic_op("/", 10, 5))  
+print(basic_op("%", 10, 5)) 
+
+#%%
+def basic_op(operator, value1, value2):
+    return eval(str(value1) + operator + str(value2))
+print(basic_op("+", 10, 5))
+print(basic_op("-", 10, 5))
+print(basic_op("*", 10, 5))
+print(basic_op("/", 10, 5))  
+print(basic_op("%", 10, 5)) 
+#%%
+def basic_op(operator, value1, value2):
+    ops = {'+': lambda a, b: a + b, 
+           '-': lambda a, b: a - b,
+           '*': lambda a, b: a * b,
+           '/': lambda a, b: a / b}
+    return ops[operator](value1, value2)
+print(basic_op("+", 10, 5))
+print(basic_op("-", 10, 5))
+print(basic_op("*", 10, 5))
+print(basic_op("/", 10, 5))  
+print(basic_op("%", 10, 5)) 
+
+
+#%%
+from operator import add, truediv, mul, sub, mod
+
+def basic_op(op, a, b):
+    operations = {
+        '+': add,
+        '/': truediv,
+        '*': mul,
+        '-': sub,
+        '%': mod
+    }
+    if op in operations:
+        return operations[op](a, b)
+    else:
+        return "Geçersiz operatör"
+
+print(basic_op("+", 10, 5))
+print(basic_op("-", 10, 5))
+print(basic_op("*", 10, 5))
+print(basic_op("/", 10, 5))
+print(basic_op("%", 10, 5))
+print(basic_op("^", 10, 5)) 
+#%%
 
 
 
