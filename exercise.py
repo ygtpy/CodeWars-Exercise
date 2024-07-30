@@ -722,31 +722,92 @@ print(basic_op("*", 10, 5))
 print(basic_op("/", 10, 5))
 print(basic_op("%", 10, 5))
 print(basic_op("^", 10, 5)) 
-#%%
+#%% convert number to negative
+
+def make_negative(number):
+    if number < 0:
+        return number
+    elif number == 0:
+        return number
+    else:
+        return - + number
+print(make_negative(0))
+
+#%% convert number to negative
+
+def make_negative(number):
+    return -abs(number)
+
+print(make_negative(123))
 
 
+#%% fuel calc
+
+def zero_fuel(distance_to_pump, mpg, fuel_left):
+    if fuel_left >= distance_to_pump / mpg:
+        return True
+    else:
+        return False
+    
+print(zero_fuel(100, 50, 1))
 
 
+#%% fuel calc
+
+def zero_fuel(dist, mpg, fuel):
+    return mpg*fuel >= dist
+
+print(zero_fuel(100, 100, 1))
+
+#%% kare dikdortgen hesapla
+
+def area_or_perimeter(l , w):
+    return l * w if l == w else 2*(l+w)
+
+print(area_or_perimeter(4, 4))
+print(area_or_perimeter(6, 10))
+
+#%% do you factor 
+def check_for_factor(base, factor):
+    if base % factor == 0:
+        return True
+    else:
+        return False
+         
+
+print(check_for_factor(24612, 3)) #True
+print(check_for_factor(9, 2)) # False
+
+#%% do you factor 
+
+def check_for_factor(base, factor):
+    return base % factor == 0
+
+print(check_for_factor(24612, 3)) #True
+print(check_for_factor(9, 2)) # False
+
+#%% is it triangle
+
+def test(a,b,c):
+    aa,bb,cc = sorted([a,b,c])
+    return cc < aa + bb
+
+print(test(4, 5, 8))
 
 
+#%% rock paper scissors
 
+def play(p1, p2):
+    return ("Draw!" if p1 == p2
+            else "Player 1 won!" 
+            if (p1 == "scissors" and p2 == "paper") or
+               (p1 == "rock" and p2 == "scissors") or
+               (p1 == "paper" and p2 == "rock")
+            else "Player 2 won!")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(play("scissors", "paper"))
+print(play("scissors", "rock"))
+print(play("paper", "paper"))
 
 
 
