@@ -840,40 +840,38 @@ print(tribonacci([3, 2, 1], 10)) # [3, 2, 1, 6, 9, 16, 31, 56, 103, 190]
 print(tribonacci([1, 1, 1], 1)) # [1]
 print(tribonacci([300, 200, 100])) # 0
 
+#%% make a tower
+
+def build_pyramid(floors):
+    pyramid = []
+    for i in range(1, floors + 1):
+        spaces = ' ' * (floors - i)
+        stars = '*' * (2 * i - 1)
+        pyramid.append(spaces + stars + spaces)
+    return pyramid
 
 
+print(build_pyramid(3))
+print(build_pyramid(6))
+
+#%% make a tower
+
+def tower_builder(n):
+    return [("*" * (2*i-1)).center(n*2-1) for i in range(1, n+1)]
+
+print(tower_builder(3))
+print(tower_builder(6))
 
 
+#%%
+import math
+def square(n):
+    if n < 0 :
+        return False
+    nn = math.isqrt(n)
+    return (nn*nn)==n
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(square(2))
 
 
 
