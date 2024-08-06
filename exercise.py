@@ -820,148 +820,44 @@ print(feast("chickadee", "chocolate cake"))
 print(feast("brown bear", "bear claw"))
 
 
+#%% ziplayan top sees
 
+def bouncingBall(h, bounce, window):
+    if h <=0 or bounce <= 0 or bounce >=1 or window >= h:
+        return -1
+    return 2 + bouncingBall(h*bounce, bounce, window)
 
+print(bouncingBall(3, 0.6, 0.5))
 
 
+#%% ziplayan top sees
 
+def bouncingBall2(h, bounce, window):
+    if not (0 < bounce < 1) or h <= 0 or window >=h:
+        return -1
+    
+    sees = 0
+    while h > window:
+        sees +=1
+        h *= bounce
+        if h > window:
+            sees +=1
+    return sees
 
+print(bouncingBall2(3, 0.6, 0.5))
 
+#%%
 
+def deneme33(h,b,w):
+    if not(h > 0 and 0 < b < 1 and w < h):
 
+        return 2 + deneme33(h*b, b, w)
+    return -1
 
+print(deneme33(3, 0.6, 0.5))
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# %%
