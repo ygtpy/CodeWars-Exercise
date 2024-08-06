@@ -1,5 +1,5 @@
 
 
 #%%
-print("naber müdür")
+print("Hello world")
 # %%

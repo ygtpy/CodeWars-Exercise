@@ -628,7 +628,7 @@ def number2(bus_stop):
 
 print(number([[10,0],[3,5],[5,8]])) # 5
 
-#%%
+#%% basic calc
 
 def hesap(operator,value1,value2):
     if operator == "+":
@@ -639,68 +639,47 @@ def hesap(operator,value1,value2):
         return value1 * value2
     else:
         return value1 / value2
-
-print(hesap("+", 10, 5))
-print(hesap("-", 10, 5))
-print(hesap("*", 10, 5))
-print(hesap("/", 10, 5))  
+  
 print(hesap("%", 10, 5))  
   
-    
-#%%
+#%% basic calc
 
 hesap2 = lambda op, val1, val2: val1 + val2 if op == "+" else val1 - val2 \
     if op == "-" else val1 * val2 if op == "*" else val1 / val2 if op == "/" else None
 
-
-print(hesap2("+", 10, 5))
-print(hesap2("-", 10, 5))
-print(hesap2("*", 10, 5))
 print(hesap2("/", 10, 5))  
-print(hesap2("%", 10, 5)) 
 
-
-#%%
+#%% basic calc
 def basic_op(o, a, b):
     return {'+':a+b,'-':a-b,'*':a*b,'/':a/b}.get(o)
 
-print(basic_op("+", 10, 5))
-print(basic_op("-", 10, 5))
 print(basic_op("*", 10, 5))
-print(basic_op("/", 10, 5))  
-print(basic_op("%", 10, 5)) 
-#%%
+
+#%% basic calc
 def basic_op(operator, value1, value2):
     return eval(f'{value1}{operator}{value2}')
-print(basic_op("+", 10, 5))
-print(basic_op("-", 10, 5))
-print(basic_op("*", 10, 5))
-print(basic_op("/", 10, 5))  
-print(basic_op("%", 10, 5)) 
 
-#%%
+print(basic_op("-", 10, 5))
+
+
+#%%  basic calc
+
 def basic_op(operator, value1, value2):
     return eval(str(value1) + operator + str(value2))
 print(basic_op("+", 10, 5))
-print(basic_op("-", 10, 5))
-print(basic_op("*", 10, 5))
-print(basic_op("/", 10, 5))  
-print(basic_op("%", 10, 5)) 
-#%%
+ 
+#%% basic calc
 def basic_op(operator, value1, value2):
     ops = {'+': lambda a, b: a + b, 
            '-': lambda a, b: a - b,
            '*': lambda a, b: a * b,
            '/': lambda a, b: a / b}
     return ops[operator](value1, value2)
+
 print(basic_op("+", 10, 5))
-print(basic_op("-", 10, 5))
-print(basic_op("*", 10, 5))
-print(basic_op("/", 10, 5))  
-print(basic_op("%", 10, 5)) 
 
 
-#%%
+#%% basic calc
 from operator import add, truediv, mul, sub, mod
 
 def basic_op(op, a, b):
@@ -717,10 +696,6 @@ def basic_op(op, a, b):
         return "Geçersiz operatör"
 
 print(basic_op("+", 10, 5))
-print(basic_op("-", 10, 5))
-print(basic_op("*", 10, 5))
-print(basic_op("/", 10, 5))
-print(basic_op("%", 10, 5))
 print(basic_op("^", 10, 5)) 
 #%% convert number to negative
 
@@ -820,6 +795,7 @@ print(feast("chickadee", "chocolate cake"))
 print(feast("brown bear", "bear claw"))
 
 
+<<<<<<< HEAD
 #%% ziplayan top sees
 
 def bouncingBall(h, bounce, window):
@@ -855,9 +831,84 @@ def deneme33(h,b,w):
     return -1
 
 print(deneme33(3, 0.6, 0.5))
+=======
+#%%
+import string
+
+def is_pangram(st):
+    letters = set(string.ascii_lowercase)
+    st = st.lower()
+    for char in st:
+        if char in letters:
+            letters.remove(char)
+        if not letters:  
+            return True
+    return False
+
+print(is_pangram("The quick brown fox jumps over the lazy dog"))
+#%%
+import string
+
+def is_pangram(s):
+    return set(string.ascii_lowercase).issubset(s.lower())
+
+#%%
+
+
+def tribonacci(sign,n=0):
+    if n == 0:
+        return [0]
+    if n < 3:
+        return sign[:n]
+
+    ts = sign[:]
+    for i in range(3,n):
+        next_v = ts[-1]+ts[-2]+ts[-3]
+        ts.append(next_v)
+    return ts
+
+print(tribonacci([1, 1, 1],10)) # [1, 1, 1, 3, 5, 9, 17, 31, 57, 105]
+print(tribonacci([0, 0, 1], 10)) # [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
+print(tribonacci([0, 1, 1], 10)) # [0, 1, 1, 2, 4, 7, 13, 24, 44, 81]
+print(tribonacci([1, 0, 0], 10)) # [1, 0, 0, 1, 1, 2, 4, 7, 13, 24]
+print(tribonacci([0, 0, 0], 10)) # [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+print(tribonacci([1, 2, 3], 10)) # [1, 2, 3, 6, 11, 20, 37, 68, 125, 230]
+print(tribonacci([3, 2, 1], 10)) # [3, 2, 1, 6, 9, 16, 31, 56, 103, 190]
+print(tribonacci([1, 1, 1], 1)) # [1]
+print(tribonacci([300, 200, 100])) # 0
+
+#%% make a tower
+
+def build_pyramid(floors):
+    pyramid = []
+    for i in range(1, floors + 1):
+        spaces = ' ' * (floors - i)
+        stars = '*' * (2 * i - 1)
+        pyramid.append(spaces + stars + spaces)
+    return pyramid
+
+
+print(build_pyramid(3))
+print(build_pyramid(6))
+
+#%% make a tower
+
+def tower_builder(n):
+    return [("*" * (2*i-1)).center(n*2-1) for i in range(1, n+1)]
+
+print(tower_builder(3))
+print(tower_builder(6))
+
+
+#%%
+import math
+def square(n):
+    if n < 0 :
+        return False
+    nn = math.isqrt(n)
+    return (nn*nn)==n
+
+print(square(2))
 
 
 
-
-
-# %%
