@@ -794,8 +794,6 @@ print(feast("great blue heron", "garlic naan"))
 print(feast("chickadee", "chocolate cake"))
 print(feast("brown bear", "bear claw"))
 
-
-<<<<<<< HEAD
 #%% ziplayan top sees
 
 def bouncingBall(h, bounce, window):
@@ -822,16 +820,6 @@ def bouncingBall2(h, bounce, window):
 
 print(bouncingBall2(3, 0.6, 0.5))
 
-#%%
-
-def deneme33(h,b,w):
-    if not(h > 0 and 0 < b < 1 and w < h):
-
-        return 2 + deneme33(h*b, b, w)
-    return -1
-
-print(deneme33(3, 0.6, 0.5))
-=======
 #%%
 import string
 
@@ -909,6 +897,79 @@ def square(n):
     return (nn*nn)==n
 
 print(square(2))
+
+
+#%% kelimeleri birlestir
+
+
+def deneme(kelimeler):
+    return " ".join(kelimeler)
+
+print(deneme(["naber","müdür"]))
+
+#%% kelimeleri birlestir
+
+kelimeler = " ".join
+print(kelimeler(["naber", "müdür"]))
+
+#%%
+
+def is_valid_walk(walk):
+
+    if len(walk) != 10:
+        return False
+    
+    vertical = 0
+    horizontal = 0
+    for direction in walk:
+        if direction == 'n':
+            vertical += 1
+        elif direction == 's':
+            vertical -= 1
+        elif direction == 'e':
+            horizontal += 1
+        elif direction == 'w':
+            horizontal -= 1
+            
+    return vertical == 0 and horizontal == 0
+
+# Tes
+print(is_valid_walk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']))
+print(is_valid_walk(['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e']))  
+print(is_valid_walk(['w']))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
