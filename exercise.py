@@ -939,39 +939,7 @@ print(is_valid_walk(['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e']
 print(is_valid_walk(['w']))
 
 
-#%%
 
-
-
-
-class Ogrenciler:
-    
-    def __init__(self,ogrenciler):
-        self.ogrenciler = ogrenciler
-        
-    def ogrenciEkle(self):
-        
-        
-        
-        
-
-
-
-
-
-
-#%%
-
-class MyClass:
-    def __init__(self, value):
-        self.value = value  # Değeri örnek değişkeni olarak saklıyoruz
-
-    def print_value(self):
-        print(self.value)  # self.value'ye erişiyoruz
-
-# Örnek oluşturup değeri geçiyoruz
-my_instance = MyClass("Merhaba Dünya!")
-my_instance.print_value()
 
 
 #%%
