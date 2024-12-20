@@ -939,18 +939,345 @@ print(is_valid_walk(['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e']
 print(is_valid_walk(['w']))
 
 
+#%%
+
+
+
+
+class Ogrenciler:
+    
+    def __init__(self,ogrenciler):
+        self.ogrenciler = ogrenciler
+        
+    def ogrenciEkle(self):
+        
+        
+        
+        
 
 
 
 
 
 
+#%%
+
+class MyClass:
+    def __init__(self, value):
+        self.value = value  # Değeri örnek değişkeni olarak saklıyoruz
+
+    def print_value(self):
+        print(self.value)  # self.value'ye erişiyoruz
+
+# Örnek oluşturup değeri geçiyoruz
+my_instance = MyClass("Merhaba Dünya!")
+my_instance.print_value()
+
+
+#%%
+ 
+
+ogrenciler = []
+num = 0
+def ogrenci_ekle():
+    
+    global num
+    
+    ad = str(input("Öğrenci ismi? "))
+    soyad = str(input("Öğrenci Soyadı? "))
+    numara = num + 1
+    num = numara
+    ogrenci = {"ad": ad, "soyad": soyad, "numara": numara}
+    ogrenciler.append(ogrenci)
+    print(f"{ad} {soyad} başarıyla eklendi")
+    
+    
+def ogrenci_liste():
+    
+    if len(ogrenciler) == 0:
+        print("Henüz kayıtlı kullanıcı yok!")
+    else:
+        for ogrenci in ogrenciler:
+            print(f"{ogrenci['ad']} {ogrenci['soyad']} - {ogrenci['numara']}")
+            
+def ogrenci_sil():
+    
+    sil_numara = int(input("Silmek istediğiniz öğrenci numarasını giriniz "))
+    for ogrenci in ogrenciler:
+        if ogrenci['numara'] == sil_numara:
+            ogrenciler.remove(ogrenci)
+            print(f"Öğrenci {ogrenci['ad']} {ogrenci['soyad']} başarıyla silindi")
+            return
+    
+    print("Bu numaraya sahip öğrenci bulunamadı")
+    
+def ogrenci_guncelle():
+    
+    numara = int(input("Güncellemek istediğiniz öğrenci numarasını girin: "))
+    for ogrenci in ogrenciler:
+        if ogrenci['numara'] == numara:
+            ad = str(input(f"Yeni Ad ({ogrenci['ad']}): "))
+            soyad = str(input(f"Yeni Soyad ({ogrenci['soyad']}): "))
+            ogrenci['ad'] = ad if ad else ogrenci['ad']
+            ogrenci['soyad'] = soyad if soyad else ogrenci['soyad']
+            print(f"Öğrenci {ogrenci['ad']} {ogrenci['soyad']} başarıyla güncellendi!")
+            return
+    
+    print("Bu numaraya sahip öğrenci bulunamadı?")
+     
+     
+
+while True:
+    
+    print("\n--- Öğrenci Yönetim Sistemi ---")
+    print("1. Öğrenci Ekle")
+    print("2. Öğrenci Listele")
+    print("3. Öğrenci Sil")
+    print("4. Öğrenci Güncelle")
+    print("5. Çıkış")
+    
+    secim = input("Seçim (1-5) ")
+    
+    if secim == "1":
+        ogrenci_ekle()
+        
+    elif secim == "2":
+        ogrenci_liste()
+        
+    elif secim == "3":
+        ogrenci_sil()
+        
+    elif secim == "4":
+        ogrenci_guncelle()
+        
+    elif secim == "5":
+        print("Çıkılıyor...")
+        break
+    
+    else:
+        print("Geçersiz seçim, lütfen tekrar deneyin.")
+        
+        
+        
+#%%
+
+
+ogrenciListesi = []
+
+def ogrenciEkle():
+    
+    isim = str(input("Öğrencinin İsmi? "))
+    soyisim = str(input("Öğrenci Soyadı? "))
+
+    if not ogrenciListesi:
+        numara = 1
+    else:
+        numara = ogrenciListesi[-1]["numara"] +1
+        
+    ogrenci = {"isim": isim, "soyad": soyisim, "numara": numara}
+    ogrenciListesi.append(ogrenci)
+    print(f"{isim} {soyisim} başarıyla kaydedildi")
+    
+
+def ogrenciSil():
+    
+    silinecekNumara = int(input("Silmek istediğiniz öğrencini numarasını giriniz "))
+    for ogrenci in ogrenciListesi:
+        if ogrenci["numara"] == silinecekNumara:
+            ogrenciListesi.remove(ogrenci)
+            print(f"{ogrenci['isim']} {ogrenci['soyad']} başarıyla silindi")
+            
+            return
+    print("Bu numaraya ait öğrenci bulunamadı!")
+        
+    
+    
+def ogrenciListele():
+    
+    if len(ogrenciListesi) == 0:
+        print("Henüz Kayıtlı Öğrenci Bulunamadı")
+    else:
+        for ogrenci in ogrenciListesi:
+            print(f"""
+                  İsim: {ogrenci['isim']} 
+                  soyisim: {ogrenci['soyad']}
+                  numara: {ogrenci['numara']}""")
+    
+        
+def ogrenciGuncelle():
+    
+    numara = int(input("Güncellemek istediğiniz öğrencinin numarasını giriniz "))
+    for ogrenci in ogrenciListesi:
+        if ogrenci["numara"] == numara:
+            isim = input(f"Yeni isim? ({ogrenci['isim']}) " )
+            soyisim = input(f"Yeni soyad? ({ogrenci['soyad']}) ")
+            ogrenci["isim"] = isim if isim else ogrenci["isim"]
+            ogrenci["soyad"] = soyisim if soyisim else ogrenci["soyad"]
+            print(f"Öğrenci {ogrenci['isim']} {ogrenci['soyad']} başarıyla güncellendi!")
+            return
+
+    print("Bu numaraya sahip öğrenci bulunamadı?")
+
+while True:
+    
+    print("\n-------------- Öğrenci Yönetim Sistemi -------------")
+    print(" -1- Öğrenci Ekle")
+    print(" -2- Öğrenci Sil")
+    print(" -3- Öğrenci Güncelle")
+    print(" -4- Öğrenci Listele")
+    print(" -5- Çıkış.. ")
+    
+    secim = input("Seçim 1-5 ")
+    
+    if secim == "1":
+        ogrenciEkle()
+    elif secim == "2":
+        ogrenciSil()
+    elif secim == "3":
+        ogrenciGuncelle()
+    elif secim == "4":
+        ogrenciListele()
+    elif secim == "5":
+        print("Çıkış yapılıyor...")
+        break
+    
+    else:
+        print("Geçersiz seçim!! ")
+    
+    
+
+    
+#%%
 
 
 
+urunler = []
+
+def urunEkle():
+
+    try:
+        urunAdi = str(input("Ürün Adını Giriniz "))
+        urunFiyati = int(input("Ürün Fiyatını Giriniz "))
+        urunAciklamasi = str(input("Ürün Açıklaması Giriniz "))
+        
+        if len(urunler) == 0:
+            urunNumarasi = 1
+        else:
+            urunNumarasi = urunler[-1]["urunNumarasi"] +1
+        
+        urun = {
+            "Ürün No": urunNumarasi,
+            "Ürün Adı": urunAdi,
+            "Ürün Fiyatı": urunFiyati,
+            "Ürün Açıklaması": urunAciklamasi
+        }        
+        
+        urunler.append(urun)
+        print(f"""
+- Ürün Adı: {urunAdi} 
+- Fiyatı: {urunFiyati} 
+- Açıklama: {urunAciklamasi} 
+- Ürün No: {urunNumarasi}
+--BAŞARIYLA EKLENDİ--
+""")
+
+    except Exception as e:
+        print("Bir Hata oluştu (urunEkle): {e}")
+
+def urunListele():
+    
+    try:
+        
+        if len(urunler) == 0:
+            print("Henüz Ürün Yok")
+        else:
+            for urun in urunler:
+                print(f"""
+- Ürün Adı: {urun['Ürün Adı']} 
+- Fiyatı: {urun['Ürün Fiyatı']} 
+- Açıklama: {urun['Ürün Açıklaması']} 
+- Ürün No: {urun['Ürün No']}
+""")
+                      
+    except Exception as e:
+        print("Bir Hata olşutu (urunListele): {e}")
+    
+    
+def urunGuncelle():
+    
+    try:
+        numara = int(input("Güncellemek İstediğiniz Ürün No'sunu giriniz "))
+        urun_bulundu = False
+        
+        for urun in urunler:
+            if urun["Ürün No"] == numara:
+                urun_bulundu = True
+                yeniAd = input(f"Yeni Ürün Adını Giriniz: (Eski Ad = {urun['Ürün Adı']}) ")
+                yeniFiyat = int(input(f"Yeni Fiyatı Giriniz: (Eski Fiyat = {urun['Ürün Fiyatı']}) "))
+                yeniAciklama = input(f"Yeni Ürün Açıklamasını Giriniz: (Eski Açıklama = {urun['Ürün Açıklaması']})")
+               
+                urun["Ürün Adı"] = yeniAd if yeniAd else urun["Ürün Adı"]
+                urun["Ürün Fiyatı"] = yeniFiyat if yeniFiyat else urun["Ürün Fiyatı"]
+                urun["Ürün Açıklaması"] = yeniAciklama if yeniAciklama else urun["Ürün Açıklaması"]
+                print(f"\n ÜRÜN EKLEME BAŞARILI! (Ürün Adı: {urun['Ürün Adı']} - Ürün Fiyatı: {urun['Ürün Fiyatı']} - Ürün Açıklaması: {urun['Ürün Açıklaması']})")
+                break
+                
+        if not urun_bulundu:
+            print("Ürün Bulunamadı")
+            
+    except Exception as e:
+        print("bir hata oluştu (urunGuncelle): {e}")
+        
+    
+def urunSil():
+    
+    try:
+        numara = int(input("Silmek İstediğiniz Ürün Numarasını Giriniz: "))
+        urun_bulundu = False
+        
+        for urun in urunler:
+            if urun["Ürün No"] == numara:
+                urun_bulundu = True
+                urunler.remove(urun)
+                print(f"Ürün Adı: {urun['Ürün Adı']} - Ürün Fiyatı: {urun['Ürün Fiyatı']} - Ürün Açıklaması: {urun['Ürün Açıklaması']} Başarıyla Silinmiştir!")
+                break
+        
+        if not urun_bulundu:
+            print("Ürün Bulunamadı")
+            
+    except Exception as e :
+        print("Bir Hata Oluştu (urunSil): {e}")
 
 
 
+while True:
+    
+    print(f"""
+------------Ürün Envanteri-------------
+1. Ürün Ekle
+2. Ürün Güncelle
+3. Ürün Sil
+4. Ürünleri Listele
+5. Çıkış Yap""")
+    
+    secim = int(input("\nSeçim Yap (1-5)= "))
+    
+    if secim == 1:
+        urunEkle()
+    elif secim == 2:
+        urunGuncelle()
+    elif secim == 3:
+        urunSil()
+    elif secim == 4:
+        urunListele()
+    elif secim == 5:
+        print("Çıkış Yapılıyor...")
+        break
+    
+    else:
+        print("Geçersiz Seçim")
+        
+    
 
 
 
